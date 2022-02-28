@@ -44,9 +44,7 @@ export const actions = {
     if(data) commit('SET_TOUR_CATEGORIES', data)
   },
   async getDestinationCategories({ state, commit }) {
-    console.log('here...')
     const data = await this.$axios.$get(`${state.apiURL}/destination-categories`)
-    console.log('destination categories', data)
     if(data) commit('SET_DESTINATION_CATEGORIES', data)
   },
   async getDestinations({ state, commit }) {
