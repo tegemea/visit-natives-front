@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'visit-natives-front',
+    title: 'Visit Natives Worldwide',
     htmlAttrs: {
       lang: 'en'
     },

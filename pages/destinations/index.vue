@@ -14,6 +14,18 @@ export default {
     } else {
       return { destinations: store.state.destinations }
     }
+  },
+  head() {
+    return {
+      title: "Safari Destinations",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        }
+      ]
+    }
   }
 }
 </script>

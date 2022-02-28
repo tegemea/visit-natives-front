@@ -15,6 +15,18 @@ export default {
         pages: data
       }
     }
+  },
+  head() {
+    return {
+      title: this.pages.seo_title ? this.pages.seo_title : this.pages.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.pages.meta_description ? this.pages.meta_description : ''
+        }
+      ]
+    }
   }
 }
 </script>

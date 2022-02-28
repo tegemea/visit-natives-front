@@ -12,6 +12,18 @@ export default {
       store.commit('SET_DESTINATIONS', data)
       return { destination: data.find(d => d.slug === params.slug), destinations: data }
     }
+  },
+  head() {
+    return {
+      title: this.destination.seo_title ? this.destination.seo_title : this.destination.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.destination.meta_description ? this.destination.meta_description : ''
+        }
+      ]
+    }
   }
 }
 </script>

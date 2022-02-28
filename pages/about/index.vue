@@ -15,6 +15,18 @@ export default {
     } else {
       return { pages:store.state.pages }
     }
+  },
+  head() {
+    return {
+      title: 'About Visit Natives Worldwide',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: ''
+        }
+      ]
+    }
   }
 }
 </script>
