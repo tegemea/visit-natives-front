@@ -11,6 +11,12 @@ export default {
       const { data } = await app.$axios.get(`${store.state.apiURL}/destinations`)
       store.commit('SET_DESTINATIONS', data)
       return { destination: data.find(d => d.slug === params.slug), destinations: data }
+    } else {
+      let data = store.state.destinations
+      return {
+        destination: data.find(d => d.slug === params.slug),
+        destinations: data
+      }
     }
   },
   head() {

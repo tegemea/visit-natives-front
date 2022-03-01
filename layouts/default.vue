@@ -1,6 +1,8 @@
 <template>
   <div class="container-fluid">
-    <Nuxt keep-alive />
+    <UIHeader class="header" />
+    <Nuxt keep-alive class="main" />
+    <UIFooter class="footer" />
   </div>
 </template>
 
@@ -23,3 +25,21 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.header {
+  position: fixed;
+  top: 0; z-index: 3;
+  padding: 0 15px;
+  line-height: 70px;
+  background: white;
+  border-bottom: 1px dashed #ccc;
+}
+.main {
+  margin-top: 70px;
+  padding: 15px 0;
+}
+.footer {
+  // position: relative;
+}
+</style>

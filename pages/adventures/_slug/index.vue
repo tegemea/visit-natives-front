@@ -12,7 +12,7 @@ export default {
       store.commit('SET_DESTINATION_CATEGORIES', data)
       return { tourCategories: data, tourCategory: data.find(c => c.slug === params.slug) }
     } else {
-      data = store.state.tourCategories
+      let data = store.state.tourCategories
       return { 
         tourCategory: data.find(c => c.slug === params.slug),
         tourCategories: store.state.tourCategories 

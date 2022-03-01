@@ -1,6 +1,8 @@
 <template>
-  <div>
-    homepage...
+  <div class="row">
+    <div class="col-12 p-0">
+      <img src="/images/ngorongoro-natives.jpg" class="img-fluid" alt="">
+    </div>
   </div>
 </template>
 
