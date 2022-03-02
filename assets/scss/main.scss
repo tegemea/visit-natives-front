@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300&family=Oswald:wght@300&display=swap');
+
+$cursive-fonts: 'Dancing Script', cursive;
+$base-fonts: 'Open Sans', sans-serif;
+$thin-fonts: 'Oswald', sans-serif;
+
+body {
+  font-family: $base-fonts;
+  font-size: 16px;
+  color: #333;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
