@@ -2,47 +2,47 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="text-center">Book your Safari with us, Visit Natives with us..!</h2><hr>
+        <h2 class="text-center cursive-fonts text-black-50 border py-3 mb-4">Book your Safari with us, Visit Natives with us..!</h2>
       </div>
       <div class="col-lg-7">
-        <form>
-          <div class="card">
+        <form id="bookingForm" ref="bookingForm">
+          <div class="card rounded-0">
             <div class="card-body">
               <div class="row">
                 <div class="col-lg-6 form-group">
                   <label for="name">Enter your Full Name</label>
-                  <input type="text" id="name" class="form-control">
+                  <input type="text" v-model="guest.name" id="name" class="form-control rounded-0">
                 </div>
                 <div class="col-lg-6 form-group">
                   <label for="email">Enter your Email</label>
-                  <input type="email" id="email" class="form-control">
+                  <input type="email" v-model="guest.email" id="email" class="form-control rounded-0">
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-6 form-group">
                   <label for="nationality">Enter your Nationality</label> <small class="text-black-50">( optional )</small>
-                  <input type="text" id="nationality" class="form-control">
+                  <input type="text" v-model="guest.nationality" id="nationality" class="form-control rounded-0">
                 </div>
                 <div class="col-lg-6 form-group">
                   <label for="phone">Enter your Phone</label> <small class="text-black-50">( optional )</small>
-                  <input type="phone" id="phone" class="form-control">
+                  <input type="phone" v-model="guest.phone" id="phone" class="form-control rounded-0">
                 </div>
               </div>
               <div class="form-group">
-                <label for="adventure">Select your Adventure of Choice</label>
-                <select name="adventure" id="adventure" class="form-control">
+                <label for="adventure_id">Select your Adventure of Choice</label>
+                <select name="adventure_id" v-model="guest.adventure" id="adventure_id" class="form-control rounded-0">
                   <option value="" selected disabled>--- Select your Adventure ---</option>
-                  <option v-for="adventure in tours" :value="adventure.name" :key="adventure.id">{{ adventure.name }}</option>
+                  <option v-for="adventure in tours" :value="adventure.id" :key="adventure.id">{{ adventure.name }}</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="message">Enter your message</label>
-                <textarea name="message" id="message" cols="30" rows="4" class="form-control"></textarea>
+                <textarea name="message" v-model="guest.message" id="message" cols="30" rows="4" class="form-control rounded-0"></textarea>
               </div>
             </div>
             <div class="card-footer d-flex">
-              <button class="btn btn-outline-info flex-grow-1 mr-3 text-uppercase">Send your Booking</button>
-              <button class="btn btn-outline-secondary">Clear</button>
+              <button class="btn btn-danger rounded-0 flex-grow-1 mr-3 text-uppercase">Send your Booking</button>
+              <button class="btn btn-outline-secondary rounded-0" @click.prevent="clearForm">Clear</button>
             </div>
           </div>
         </form>
@@ -56,6 +56,13 @@
 
 <script>
 export default {
+  data() {
+    return {
+      guest: {
+        name:'', email:'', nationality:'', phone:'', adventure:'', message:''
+      }
+    }
+  },
   async asyncData({ store, app }) {
     if(!store.state.tours.length) {
       const data = await app.$axios.$get(`${store.state.apiURL}/tours`)
@@ -63,6 +70,12 @@ export default {
     } else {
       console.log('store : ', store.state.tours)
       return { tours: store.state.tours }
+    }
+  },
+  methods: {
+    clearForm() {
+      this.guest.name = ''; this.guest.email = ''; this.guest.nationality = ''; this.guest.phone = '';
+      this.guest.message = ''; this.guest.adventure = ''; document.querySelector('#bookingForm').reset();
     }
   }
 }

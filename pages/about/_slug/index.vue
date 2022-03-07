@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <Page :page="page" :pages="pages" />
   </div>
 </template>

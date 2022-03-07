@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <Safari :safaris="safaris" :safari="safari" />
   </div>
 </template>

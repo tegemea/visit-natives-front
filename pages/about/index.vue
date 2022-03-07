@@ -1,18 +1,16 @@
 <template>
   <div class="container">
     <div class="row">
-      <!-- <div v-for="page in pages" :key="page.id">
-        <NuxtLink :to="`/about/${page.slug}`">{{ page.name }}</NuxtLink>
-      </div> -->
       <div v-for="p in pages" class="col-12 mb-4" :key="p.id">
         <div class="row">
-          <div class="col-12">
-            <h3>
-              <NuxtLink :to="`/about/${p.slug}`">{{ p.name }}</NuxtLink>
-            </h3> <hr>
-          </div>
           <div class="col-lg-6 text-justify">
-            <div v-html="p.description.length > 500 ? p.description.substr(0, 500) + '...' : p.description"></div>
+            <h2 class="title">
+              <NuxtLink :to="`/about/${p.slug}`" class="title-link" :title="p.name">
+                <fai :icon="['fas','drum']" class="mr-3 small"></fai>{{ p.name }}
+              </NuxtLink>
+              <a :href="`/about/${p.slug}`" class="btn btn-sm btn-outline-danger thin-fonts float-right rounded-0">Read More</a>
+            </h2> <hr>
+            <div v-html="p.description.length > 800 ? p.description.substr(0, 800) + '...' : p.description"></div>
           </div>
           <div class="col-lg-6">
             <NuxtLink :to="`/about/${p.slug}`">
@@ -54,3 +52,21 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import '@/assets/scss/main';
+
+.title {
+  font-family: $cursive-fonts;
+
+  a.title-link {
+    color: lighten($base-color, 30);
+    text-decoration: none;
+
+    &:hover {
+      color: $brand-color;
+    }
+  }
+}
+
+</style>

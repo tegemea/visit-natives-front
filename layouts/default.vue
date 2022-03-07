@@ -28,15 +28,15 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  position: fixed;
-  top: 0; z-index: 3;
-  padding: 0 15px;
-  line-height: 70px;
-  background: white;
-  border-bottom: 1px dashed #ccc;
+  // position: fixed;
+  // top: 0; z-index: 3;
+  // padding: 0 15px;
+  // line-height: 70px;
+  // background: white;
+  // border-bottom: 1px dashed #ccc;
 }
 .main {
-  margin-top: 70px;
+  margin-top: 120px;
   padding: 15px 0;
 }
 .footer {

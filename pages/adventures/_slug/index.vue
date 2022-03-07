@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <TourCategory :tourCategory="tourCategory" :tourCategories="tourCategories" />
   </div>
 </template>

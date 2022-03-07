@@ -4,10 +4,28 @@ $cursive-fonts: 'Dancing Script', cursive;
 $base-fonts: 'Open Sans', sans-serif;
 $thin-fonts: 'Oswald', sans-serif;
 
+.cursive-fonts { font-family: $cursive-fonts; }
+.base-fonts { font-family: $base-fonts; }
+.thin-fonts { font-family: $thin-fonts; }
+
+$base-color: #333;
+$brand-color: brown;
+
+.base-color { color: $base-color; }
+.brand-color { color: $brand-color; }
+
+a.brand-color {
+  color: $brand-color;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 body {
   font-family: $base-fonts;
   font-size: 16px;
-  color: #333;
+  color: $base-color;
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
