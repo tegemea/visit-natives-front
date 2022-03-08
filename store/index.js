@@ -1,6 +1,6 @@
 export const state = () => ({
-  apiURL: "http://localhost:8000/api/v1",
-  baseURL: "http://localhost:8000",
+  apiURL: "https://visitnatives.co.tz/core/api/v1",
+  baseURL: "https://visitnatives.co.tz",
 
   pages: [],
   tours: [],
