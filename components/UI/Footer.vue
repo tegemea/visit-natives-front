@@ -23,8 +23,8 @@
             <p>
               Arusha, United Republic <br>
               P. O. Box 1234 Arusha, TZ <br>
-              Tel: <a class="brand-color" href="tel:+255785727964">+255785727964</a> <br>
-              Email: <a class="brand-color" href="mailto:info@visitnatives.co.tz">info@visitnatives.co.tz</a> <br>
+              Tel: <a class="brand-color" href="tel:+255745015555">+255745015555</a> <br>
+              Email: <a class="brand-color" href="mailto:hello@visitnatives.co.tz">hello@visitnatives.co.tz</a> <br>
             </p>
           </address>
         </div>
