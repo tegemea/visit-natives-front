@@ -14,7 +14,7 @@
           The indigenous people manage 80% of the Earth’s biodiversity, but they only occupy 22% of the planet’s surface. The indigenous communities play a crucial role in protecting our planet. For example, the Hadzabe only gather wild honey during periods of the rainy season so that bees are able to store a surplus. They never take more than nature can give for them. They are custodians of their ancestral lands and they have indigenous knowledge that respects nature in all aspects. We bring these same values on our trips.
         </div>
       </div>
-      <div v-for="page in pages" class="col-lg-4" :key="page.id">
+      <div v-for="page in pages.slice(0, 3)" class="col-lg-4" :key="page.id">
         <div class="card custom-card rounded-0">
           <div class="card-body p-0">
             <img :src="`${baseURL}/storage/page_photos/${page.photo}`" class="img-fluid" :alt="page.name">
